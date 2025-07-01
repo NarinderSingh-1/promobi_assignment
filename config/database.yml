@@ -1,0 +1,14 @@
+default: &default
+  adapter:  postgresql
+  encoding: unicode
+  username: narinder
+  password: narinder
+  pool:     <%= ENV.fetch('RAILS_MAX_THREADS', 5) %>
+
+development:
+  <<: *default
+  database: promobi_development
+
+test:
+  <<: *default
+  database: promobi_test
